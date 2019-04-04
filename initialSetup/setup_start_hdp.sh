@@ -31,7 +31,7 @@ echo -e "${GREEN}***************************************************************
 echo "* Setup and start $APP"
 echo -e "*********************************************************************${NC}"
 # Add host if not exist
-if ! grep -q "sandbox-hdf.hortonworks.com" /etc/hosts; then 
+if ! grep -q "sandbox-hdp.hortonworks.com" /etc/hosts; then 
   sudo sed -i '/127.0.0.1*/c\127.0.0.1	localhost sandbox-hdp.hortonworks.com sandbox-hdf.hortonworks.com/' /etc/hosts
   echo -e "${GREEN}Added 127.0.0.1	localhost sandbox-hdp.hortonworks.com sandbox-hdf.hortonworks.com to /etc/hosts $APP ${NC}"
 fi

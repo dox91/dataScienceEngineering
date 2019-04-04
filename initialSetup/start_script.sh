@@ -94,6 +94,15 @@ sudo apt-get -y install scala
 scala -version
 
 ##############################################
+## install sbt (scala build tool - dependency management)
+##############################################
+echo "deb https://dl.bintray.com/sbt/debian /" | sudo tee -a /etc/apt/sources.list.d/sbt.list
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2EE0EA64E40A89B84B2DF73499E82A75642AC823
+sudo apt-get update
+sudo apt-get install sbt
+sbt sbtVersion
+
+##############################################
 ## install docker
 ##############################################
 # https://docs.docker.com/install/linux/docker-ce/ubuntu/
@@ -133,8 +142,6 @@ docker-compose --version
 # https://support.gitkraken.com/how-to-install/?query=
 wget https://release.gitkraken.com/linux/gitkraken-amd64.deb
 dpkg -i gitkraken-amd64.deb
-rm gitkraken-amd64.deb
-
 sudo apt update
 #sudo apt -y install libcurl3
 #sudo apt -y install gconf-service
@@ -142,6 +149,7 @@ sudo apt -y install gconf2
 #sudo apt -y install python
 sudo apt --fix-broken install
 dpkg -i gitkraken-amd64.deb
+rm gitkraken-amd64.deb
 
 ##############################################
 ## install google chrome webbrowser
