@@ -59,7 +59,7 @@ sudo apt -y install ubuntu-restricted-extras
 ## install pdfsam
 ##############################################
 #https://github.com/torakiki/pdfsam/issues/295
-sudo apt install openjdk-8-jdk openjfx
+sudo apt -y install openjdk-8-jdk openjfx
 sudo apt-get -y install pdfsam 
 
 ##############################################
@@ -141,6 +141,7 @@ sudo apt update
 sudo apt -y install gconf2
 #sudo apt -y install python
 sudo apt --fix-broken install
+dpkg -i gitkraken-amd64.deb
 
 ##############################################
 ## install google chrome webbrowser
