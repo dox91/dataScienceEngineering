@@ -90,7 +90,13 @@ echo $JAVA_HOME
 ## install scala
 ##############################################
 # https://medium.com/@josemarcialportilla/installing-scala-and-spark-on-ubuntu-5665ee4b62b1
-sudo apt-get -y install scala
+#sudo apt-get -y install scala
+
+# scala shell issue - instead of installing with apt use deb
+# https://stackoverflow.com/questions/49788781/ubuntu-scala-repl-commands-not-typed-on-console
+sudo apt-get remove scala-library scala
+sudo wget www.scala-lang.org/files/archive/scala-2.11.12.deb
+sudo dpkg -i scala-2.11.12.deb
 scala -version
 
 ##############################################
@@ -101,6 +107,22 @@ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2EE0EA64E40A89
 sudo apt-get update
 sudo apt-get install sbt
 sbt sbtVersion
+
+##############################################
+## install maven
+##############################################
+# https://linuxize.com/post/how-to-install-apache-maven-on-ubuntu-18-04/
+sudo apt update
+sudo apt -y install maven
+mvn -version
+
+# sudo nano /etc/profile.d/maven.sh
+# export JAVA_HOME=/usr/lib/jvm/default-java
+# export M2_HOME=/opt/maven
+# export MAVEN_HOME=/opt/maven
+# export PATH=${M2_HOME}/bin:${PATH}
+# sudo chmod +x /etc/profile.d/maven.sh # make script executable
+# source /etc/profile.d/maven.sh # load environment variables
 
 ##############################################
 ## install docker
