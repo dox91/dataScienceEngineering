@@ -37,13 +37,12 @@ cd $HOME/$APP/$APPDIR
 (nohup bin/zookeeper-server-start.sh config/zookeeper.properties > /dev/null 2>&1) &
 sleep 2
 (nohup bin/kafka-server-start.sh config/server.properties > /dev/null 2>&1) &
+sleep 2
 echo -e "${GREEN}Zookeeper and kafka service started. Will create HelloWorld topic and send describe command ... ${NC}"
 bin/kafka-topics.sh --describe --bootstrap-server localhost:9092 | grep HelloWorld
 greprc=$?
-if [[ $greprc -eq 0 ]] ; 
+if [[ ! $greprc -eq 0 ]] ; 
 	then
-    	echo "not found Hello World topic will create it"
-	else
 		echo "not found Hello World topic will create it"
 		bin/kafka-topics.sh --create \
 	    --zookeeper localhost:2181 \

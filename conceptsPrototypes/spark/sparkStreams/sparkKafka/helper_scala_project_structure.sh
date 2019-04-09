@@ -20,9 +20,9 @@ while test $# -gt 0; do
                         echo "$package [options] application [arguments]"
                         echo " "
                         echo "options:"
-                        echo "-h, --help                show brief help"
-                        echo "-a, --action=ACTION       specify an action to use"
-                        echo "-o, --output-dir=DIR      specify a directory to store output in"
+                        echo "-h, --help                				show brief help"
+                        echo "-pn, --project-name NAME                	specify a project name"
+                        echo "-dmt --dependency-mgmt-tool maven			specify maven or sbt"
                         exit 0
                         ;;
                 -pn)
@@ -58,14 +58,25 @@ mkdir -p src/main/resources
 mkdir -p src/test/java
 mkdir -p src/test/scala
 mkdir -p src/test/resources
+
+
 touch builder.sbt
-
-
 tee -a builder.sbt <<< "name := $PRJNAME # project name"
 tee -a builder.sbt <<< "version := '0.0.0' #project version"
 tee -a builder.sbt <<< "version := '0.0.0' #project version"
 
 scalaVersion := "2.9.2" #the current scala version of the project
+
+
+#touch builder.sbt
+#package com.myfirstproject
+
+#object Hello {
+#  def main(args : Array[String]) = {
+#    println("Hello World")
+#  }
+#}
+
 
 #val kafka_streams_scala_version = "0.1.0"
 #libraryDependencies ++= Seq("com.lightbend" %%

@@ -30,6 +30,12 @@ for i in $APPS; do
           cd $APPDIR
           bin/zookeeper-server-stop.sh
           bin/kafka-server-stop.sh
+          echo -e "${YELLOW}Clear kafka-logs ${NC}"
+          rm -r /tmp/kafka-logs/
+          echo -e "${GREEN}done ${NC}"
+          echo -e "${YELLOW}Clear kafka-streams (rocksdb for statestore) ${NC}"
+          rm -r /tmp/kafka-streams/
+          echo -e "${GREEN}done ${NC}"
           ;;
      'spark')      
           echo -e "${YELLOW}Stop $i services ${NC}" 
@@ -41,24 +47,28 @@ for i in $APPS; do
           APPDIR=$(find ~/$i/ -maxdepth 1 -mindepth 1 -type d -name "*$i*") 
           docker stop $(docker ps -aq) 
           docker rm $(docker ps -aq) # will remove all containers, not images 
+          echo -e "${GREEN}done ${NC}"
           ;;
 	   'nifi')
           echo -e "${YELLOW}Stop $i services ${NC}" 
           APPDIR=$(find ~/$i/ -maxdepth 1 -mindepth 1 -type d -name "*$i*") 
 	        cd $APPDIR
 	        bin/nifi.sh stop
+          echo -e "${GREEN}done ${NC}"
 	      ;;
     'hbase')
           echo -e "${YELLOW}Stop $i services ${NC}" 
           APPDIR=$(find ~/$i/ -maxdepth 1 -mindepth 1 -type d -name "*$i*") 
           cd $APPDIR
           bin/stop-hbase.sh stop
+          echo -e "${GREEN}done ${NC}"
         ;;
     'zeppelin')
           echo -e "${YELLOW}Stop $i services ${NC}" 
           APPDIR=$(find ~/$i/ -maxdepth 1 -mindepth 1 -type d -name "*$i*") 
           cd $APPDIR
           bin/zeppelin-daemon.sh stop
+          echo -e "${GREEN}done ${NC}"
         ;;
 	esac
 done

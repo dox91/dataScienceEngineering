@@ -75,6 +75,7 @@ sudo apt-get -y install pdfsam
 ##############################################
 # https://linuxize.com/post/install-java-on-ubuntu-18-04/
 #sudo update-alternatives --config java
+#sudo update-alternatives --config javac
 ## then select the java version you want 
 
 ## a) set JAVA_HOME manually 
@@ -85,6 +86,9 @@ sudo apt-get -y install pdfsam
 sudo tee -a /etc/environment <<< "JAVA_HOME='/usr/lib/jvm/java-8-openjdk-amd64/jre/'"
 source /etc/environment
 echo $JAVA_HOME
+
+java -version
+javac -version
 
 ##############################################
 ## install scala
