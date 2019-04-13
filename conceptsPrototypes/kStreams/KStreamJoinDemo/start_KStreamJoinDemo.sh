@@ -16,12 +16,6 @@ javac -cp "$KAFKA_HOME/libs/*:.:" KStreamJoinDemo.java
 source ../../../initialSetup/setup_start_kafka.sh
 cd $KAFKA_HOME
 
-# delete topics
-#bin/kafka-topics.sh --zookeeper localhost:2181 --describe
-#bin/kafka-topics.sh --delete --zookeeper localhost:2181 --topic input-topic-Left
-#bin/kafka-topics.sh --delete --zookeeper localhost:2181 --topic input-topic-Right
-#bin/kafka-topics.sh --delete --zookeeper localhost:2181 --topic join-topic-output
-
 # create topics
 for i in $LISTTOPICS; do
     bin/kafka-topics.sh --describe --bootstrap-server localhost:9092 | grep $i
@@ -36,27 +30,6 @@ for i in $LISTTOPICS; do
             --topic $i
     fi
 done
-# bin/kafka-topics.sh --create \
-#     --zookeeper localhost:2181 \
-#     --replication-factor 1 \
-#     --partitions 1 \
-#     --topic input-topic-left
-
-# bin/kafka-topics.sh --create \
-#     --zookeeper localhost:2181 \
-#     --replication-factor 1 \
-#     --partitions 1 \
-#     --topic input-topic-right
-
-# bin/kafka-topics.sh --create \
-#     --zookeeper localhost:2181 \
-#     --replication-factor 1 \
-#     --partitions 1 \
-#     --topic join-topic-output \
-#     --config cleanup.policy=compact
-
-# bin/kafka-topics.sh --zookeeper localhost:2181 \
-#     --describe
 
 ###########################################
 # III. Start application
