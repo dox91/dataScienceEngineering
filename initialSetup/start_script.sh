@@ -150,7 +150,6 @@ sudo add-apt-repository \
    stable"
 
 sudo apt-get update
-
 sudo apt-get -y install docker-ce docker-ce-cli containerd.io
 # sudo docker run hello-world
 
@@ -169,10 +168,7 @@ docker-compose --version
 wget https://release.gitkraken.com/linux/gitkraken-amd64.deb
 dpkg -i gitkraken-amd64.deb
 sudo apt update
-#sudo apt -y install libcurl3
-#sudo apt -y install gconf-service
 sudo apt -y install gconf2
-#sudo apt -y install python
 sudo apt --fix-broken install
 dpkg -i gitkraken-amd64.deb
 rm gitkraken-amd64.deb
@@ -255,18 +251,26 @@ sudo snap install libreoffice
 #http://elinuxbook.com/install-remarkable-editor-in-ubuntu-16-04-a-best-markdown-editor-linux-application/
 
 ##############################################
+## citrix client (Secure Appl. GateWay - SAGW)
+##############################################
+## https://www.citrix.de/downloads/workspace-app/linux/workspace-app-for-linux-latest.html
+#CITRIXAPP=icaclient_19.3.0.5_amd64.deb
+#wget "https://downloads.citrix.com/15918/${CITRIXAPP}?__gda__=1555161114_ff045d5dc3646d8c64f8df9860752ccb"
+#mv ${CITRIXAPP}* ${CITRIXAPP}
+#sudo dpkg -i ${CITRIXAPP}
+#rm ${CITRIXAPP}
+
+## citrix client fix for Linux (ssl-cacert link)
+## https://ubuntuforums.org/showthread.php?t=2391515
+#cd /opt/Citrix/ICAClient/keystore/
+#rm -rf cacerts
+#ln -s /etc/ssl/certs cacerts
+
+##############################################
 # else
 ##############################################
-# install steam?
-
 ## install vlc media player
 ## note app / note client for evernote
-
-## install sticky notes
-#  https://itsfoss.com/indicator-stickynotes-windows-like-sticky-note-app-for-ubuntu/
-#sudo add-apt-repository ppa:umang/indicator-stickynotes
-#sudo apt-get update
-#sudo apt-get -y install indicator-stickynotes
 
 ##############################################
 # uninstall apt
