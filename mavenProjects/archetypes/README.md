@@ -3,7 +3,7 @@
 Source:
 https://maven.apache.org/guides/mini/guide-creating-archetypes.html
 
-## Quickstart example: Custom Scala / SparkArchetype
+## I. Quickstart example: Create custom Scala / SparkArchetype
 
 ### 1. Create archetype from generic archetype "maven-archetype-archetype"
 ```
@@ -24,3 +24,4 @@ mvn archetype:generate
 ### 4. Install
 ...
 
+## II. Create project based on custom archetype
