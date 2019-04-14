@@ -14,42 +14,52 @@ source /etc/environment
 ### Script start
 ##############################################
 echo -e "${GREEN}*********************************************************************"
-echo "* Script to set all home variables"
+echo "* start - set all home variables"
 echo -e "*********************************************************************${NC}"
-
 for i in $APPS; do
     case $i in
      'kafka')      
           APPDIR=$(find ~/$i/ -maxdepth 1 -mindepth 1 -type d -name "*$i*") 
           export KAFKA_HOME=$APPDIR
+          echo KAFKA_HOME=$APPDIR
           ;;
      'spark')      
           APPDIR=$(find ~/$i/ -maxdepth 1 -mindepth 1 -type d -name "*$i*") 
           export SPARK_HOME=$APPDIR
+          echo SPARK_HOME=$APPDIR
           ;;
      'hdp')
           APPDIR=$(find ~/$i/ -maxdepth 1 -mindepth 1 -type d -name "*$i*") 
-          export HDP_HOME==$APPDIR
+          export HDP_HOME=$APPDIR
+          echo HDP_HOME=$APPDIR
           ;;
      'hdf')
           APPDIR=$(find ~/$i/ -maxdepth 1 -mindepth 1 -type d -name "*$i*") 
-          export HDF_HOME==$APPDIR
+          export HDF_HOME=$APPDIR
+          echo HDF_HOME=$APPDIR
           ;;
      'confluent')
           APPDIR=$(find ~/$i/ -maxdepth 1 -mindepth 1 -type d -name "*$i*") 
-          export CONFLUENT_HOME==$APPDIR
+          export CONFLUENT_HOME=$APPDIR
+          echo CONFLUENT_HOME=$APPDIR
           ;;
 	 'nifi')
           APPDIR=$(find ~/$i/ -maxdepth 1 -mindepth 1 -type d -name "*$i*") 
-          export NIFI_HOME==$APPDIR
+          export NIFI_HOME=$APPDIR
+          echo NIFI_HOME=$APPDIR
 	      ;;
     'hbase') 
           APPDIR=$(find ~/$i/ -maxdepth 1 -mindepth 1 -type d -name "*$i*") 
-          export HBASE_HOME==$APPDIR
+          export HBASE_HOME=$APPDIR
+          echo HBASE_HOME=$APPDIR
         ;;
     'zeppelin')
           APPDIR=$(find ~/$i/ -maxdepth 1 -mindepth 1 -type d -name "*$i*") 
-          export ZEPPELIN_HOME==$APPDIR
+          export ZEPPELIN_HOME=$APPDIR
+          echo ZEPPELIN_HOME=$APPDIR
         ;;
 	esac
 done
+echo -e "${GREEN}*********************************************************************"
+echo "* done - set all home variables"
+echo -e "*********************************************************************${NC}"
