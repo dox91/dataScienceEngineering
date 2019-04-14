@@ -1,0 +1,6 @@
+<archetype>
+  <id>SparkArchetype</id>
+  <sources>
+    <source>src/main/scala/HelloWorldApp.scala</source>
+  </sources>
+</archetype>
