@@ -1,0 +1,6 @@
+name: bigData
+dependencies:
+  - python=3.7
+  - numpy=1.9.*
+  - pip:
+    - pyspark==2.4.0
