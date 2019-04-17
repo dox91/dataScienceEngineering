@@ -1,6 +1,7 @@
-source ../../../initialSetup/set_home_variables.sh > /dev/null 2>&1
+#source ../../../initialSetup/set_home_variables.sh > /dev/null 2>&1
 
-
+source /home/anh/CodingProjects/dataScienceEngineering/initialSetup/set_home_variables.sh > /dev/null 2>&1
+cd $SPARK_HOME
 ##############################################
 ### submit spark-job: SimpleApp 
 ##############################################
