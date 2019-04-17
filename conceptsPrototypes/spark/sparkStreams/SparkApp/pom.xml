@@ -9,7 +9,7 @@
 
   <!-- Define properties here -->
   <properties>
-    <main.class>com.dox91.spark.SimpleApp</main.class>
+    <main.class>com.dox91.spark.KafkaProducerApp</main.class>
     <scala.version>2.11.12</scala.version>
     <spark.version>2.4.0</spark.version>
     <maven-scala-plugin.version>2.15.2</maven-scala-plugin.version>
@@ -22,20 +22,23 @@
       <artifactId>scala-library</artifactId>
       <version>${scala.version}</version>
     </dependency>
-<!--
-    <dependency>
-      <groupId>org.apache.spark</groupId>
-      <artifactId>spark-core_2.12</artifactId>
-      <version>${spark.version}</version>
-    </dependency>
-    -->
 
-    <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-sql -->
+    <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-streaming -->
     <dependency>
       <groupId>org.apache.spark</groupId>
-      <artifactId>spark-sql_2.11</artifactId>
+      <artifactId>spark-streaming_2.12</artifactId>
       <version>2.4.0</version>
+      <scope>provided</scope>
     </dependency>
+
+    <!--
+        <dependency>
+          <groupId>org.apache.spark</groupId>
+          <artifactId>spark-core_2.12</artifactId>
+          <version>${spark.version}</version>
+        </dependency>
+        -->
+
 
     <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-sql -->
     <dependency>
