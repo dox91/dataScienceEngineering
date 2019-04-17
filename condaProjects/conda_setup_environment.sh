@@ -4,6 +4,8 @@
 ## conda env: bigdata-env
 ##############################################
 echo "export PATH=/home/$USER/anaconda3/bin:$PATH" >> ~/.bashrc 
+SCRIPTDIR="$( cd "$(dirname "$0")" ; pwd -P )"
+cd $SCRIPTDIR
 
 conda env list | grep -q bigData-env
 greprc=$?
