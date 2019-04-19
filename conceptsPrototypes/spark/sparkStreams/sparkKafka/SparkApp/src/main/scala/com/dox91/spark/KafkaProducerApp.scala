@@ -9,10 +9,12 @@ import org.apache.spark.streaming._
 
 object KafkaProducerApp {
   def main(args: Array[String]): Unit = {
+    val KTOPIC = "test-stream-csv-topic"
+    val DATAPATH = "/home/anh/data/moviedata/"
 
     val spark = SparkSession
       .builder
-      .appName("Spark-Kafka-Integration")
+      .appName("Spark-Kafka-Integration-L")
       .getOrCreate()
 
     val mySchema = StructType(Array(
@@ -23,12 +25,12 @@ object KafkaProducerApp {
       StructField("duration", IntegerType)
     ))
 
-    val streamingDataFrame = spark.readStream.schema(mySchema).csv("/home/anh/data/")
+    val streamingDataFrame = spark.readStream.schema(mySchema).csv(DATAPATH)
 
     val recordToKafka = streamingDataFrame.selectExpr("CAST(id AS STRING) AS key", "to_json(struct(*)) AS value").
       writeStream
       .format("kafka")
-      .option("topic", "join-topic-output")
+      .option("topic", KTOPIC)
       .option("kafka.bootstrap.servers", "localhost:9092")
       .option("checkpointLocation", "/tmp/checkpoint/")
       .queryName("from-csv-stream-to-kafka")
