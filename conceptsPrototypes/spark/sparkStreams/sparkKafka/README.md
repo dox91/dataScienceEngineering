@@ -1,8 +1,8 @@
 # Spark Kafka Integration Demos
 
 ## Table of content
-1. SparkApp1: demo project to read from csv and write to kafka topic
-2. SparkApp2: demo project to read from csv,write into 2 kafka topics, which will result in joined topic (KStreamsApp in background) 
+1. SparkApp1: demo spark-stream project to read from csv and write to kafka topic
+2. SparkApp2: demo spark-stream project to read from csv, write into 2 kafka topics, and by having a KStreams App in the background, the joined messages will be written to a joined output topic 
 
 
 ### Project SparkApp1: KafkaProducerApp.scala
