@@ -6,7 +6,7 @@ LISTTOPICS="input-topic-left input-topic-right join-topic-output"
 ###########################################
 SCRIPTDIR="$( cd "$(dirname "$0")" ; pwd -P )"
 cd $SCRIPTDIR
-source ../../../initialSetup/set_home_variables.sh > /dev/null 2>&1
+source ../../../initialSetup/helper/set_home_variables.sh > /dev/null 2>&1
 javac -cp "$KAFKA_HOME/libs/*:.:" KStreamJoinDemo.java
 
 ###########################################
@@ -36,9 +36,11 @@ done
 ###########################################
 cd $SCRIPTDIR
 # open console-producer for input topic left and right
-bash -c 'gnome-terminal -t "left" -x bash helper_console_producer.sh input-topic-left'
+#bash -c 'gnome-terminal -t "left" -x bash helper_console_producer.sh input-topic-left'
+bash -c 'gnome-terminal -t "left" -x bash helper_console_consumer.sh input-topic-left'
 #gnome-terminal -x "bash helper_console_producer.sh input-topic-left"
-bash -c 'gnome-terminal -t "right" -x bash helper_console_producer.sh input-topic-right'
+#bash -c 'gnome-terminal -t "right" -x bash helper_console_producer.sh input-topic-right'
+bash -c 'gnome-terminal -t "right" -x bash helper_console_consumer.sh input-topic-right'
 # open console-consumer for topic
 bash -c 'gnome-terminal -t "joined" -x bash helper_console_consumer.sh join-topic-output'
 

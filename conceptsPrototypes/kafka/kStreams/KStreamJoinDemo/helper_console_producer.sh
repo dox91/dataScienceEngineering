@@ -1,5 +1,5 @@
 #!/bin/sh
-source ../../../initialSetup/set_home_variables.sh > /dev/null 2>&1
+source ../../../initialSetup/helper/set_home_variables.sh > /dev/null 2>&1
 cd $KAFKA_HOME
 echo -e "${GREEN}*********************************************************************"
 echo "* Start Console-Producer - Topic: $1"
