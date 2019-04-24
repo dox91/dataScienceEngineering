@@ -1,0 +1,30 @@
+
+
+## 
+
+
+
+
+## test with stockmarketclock
+scrapy shell 'https://www.stockmarketclock.com/exchanges/nyse#'
+response.css('table').getall()
+
+
+
+
+
+
+
+
+
+#### test
+clock = response.css("table.table.clock-table.clock-open")[0]
+
+clock = response.css("table clock-table clock-open")
+clock.css("span.nyse").get()
+quote.css("span.text::text").get()
+data-exchange-clock-seconds
+
+
+
+table = response.css('table').getall()
