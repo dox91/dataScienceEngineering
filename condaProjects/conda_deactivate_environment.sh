@@ -4,7 +4,7 @@ YELLOW='\033[0;33m'
 GREEN='\033[0;32m'
 NC='\033[0m' # No Color
 ##############################################
-## conda activate env
+## conda deactivate env
 ##############################################
 CONDAFILE="/etc/profile.d/conda.sh"
 # if file not exist
@@ -13,9 +13,12 @@ if [ ! -f "$CONDAFILE" ];
 		sudo ln -s $HOME/anaconda3/etc/profile.d/conda.sh /etc/profile.d/conda.sh
 		#echo "export PATH=/home/$USER/anaconda3/bin:$PATH" >> ~/.bashrc 
 		echo ". $HOME/anaconda3/etc/profile.d/conda.sh" >> ~/.bashrc
+	else 
+		echo
 fi
+
 . ~/.bashrc
-conda activate "$1"
-echo -e "${GREEN}*********************************************************************"
-echo "* Activated conda environment $1"
+conda deactivate
+echo -e "${YELLOW}*********************************************************************"
+echo "* Deactivated current conda environment $1"
 echo -e "*********************************************************************${NC}"

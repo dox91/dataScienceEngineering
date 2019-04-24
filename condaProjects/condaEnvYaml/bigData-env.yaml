@@ -1,6 +1,10 @@
-name: bigData
+name: bigData-env
 dependencies:
   - python=3.7
-  - numpy=1.9.*
   - pip:
     - pyspark==2.4.0
+    - requests==2.21.0
+    - threaded==4.0.3
+    - pandas_market_calendars==1.0
+    - scrapy==1.6.0
+    - scrapy-splash==0.7.2

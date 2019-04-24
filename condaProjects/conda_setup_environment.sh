@@ -3,10 +3,12 @@
 ##############################################
 ## conda env: bigdata-env
 ##############################################
-echo "export PATH=/home/$USER/anaconda3/bin:$PATH" >> ~/.bashrc 
-SCRIPTDIR="$( cd "$(dirname "$0")" ; pwd -P )"
-cd $SCRIPTDIR
+#echo "export PATH=/home/$USER/anaconda3/bin:$PATH" >> ~/.bashrc 
+. ~/.bashrc
 
+SCRIPTDIR="$( cd "$(dirname "$0")" ; pwd -P )"
+echo $SCRIPTDIR
+cd $SCRIPTDIR
 conda env list | grep -q bigData-env
 greprc=$?
 if [[ ! $greprc -eq 0 ]] ; 
