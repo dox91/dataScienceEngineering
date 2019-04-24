@@ -43,21 +43,21 @@ for i in $APPS; do
           export CONFLUENT_HOME=$APPDIR
           echo CONFLUENT_HOME=$APPDIR
           ;;
-	 'nifi')
-          APPDIR=$(find ~/$i/ -maxdepth 1 -mindepth 1 -type d -name "*$i*") 
-          export NIFI_HOME=$APPDIR
-          echo NIFI_HOME=$APPDIR
-	      ;;
-    'hbase') 
-          APPDIR=$(find ~/$i/ -maxdepth 1 -mindepth 1 -type d -name "*$i*") 
-          export HBASE_HOME=$APPDIR
-          echo HBASE_HOME=$APPDIR
-        ;;
-    'zeppelin')
-          APPDIR=$(find ~/$i/ -maxdepth 1 -mindepth 1 -type d -name "*$i*") 
-          export ZEPPELIN_HOME=$APPDIR
-          echo ZEPPELIN_HOME=$APPDIR
-        ;;
+  	 'nifi')
+            APPDIR=$(find ~/$i/ -maxdepth 1 -mindepth 1 -type d -name "*$i*") 
+            export NIFI_HOME=$APPDIR
+            echo NIFI_HOME=$APPDIR
+  	      ;;
+      'hbase') 
+            APPDIR=$(find ~/$i/ -maxdepth 1 -mindepth 1 -type d -name "*$i*") 
+            export HBASE_HOME=$APPDIR
+            echo HBASE_HOME=$APPDIR
+          ;;
+      'zeppelin')
+            APPDIR=$(find ~/$i/ -maxdepth 1 -mindepth 1 -type d -name "*$i*") 
+            export ZEPPELIN_HOME=$APPDIR
+            echo ZEPPELIN_HOME=$APPDIR
+          ;;
 	esac
 done
 echo -e "${GREEN}*********************************************************************"

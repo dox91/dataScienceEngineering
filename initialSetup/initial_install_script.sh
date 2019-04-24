@@ -36,7 +36,7 @@
 ##############################################
 ## change wallpaper
 ##############################################
-gsettings set org.gnome.desktop.background picture-uri "http://wallpaperswide.com/download/nature_301-wallpaper-2880x1800.jpg"
+#gsettings set org.gnome.desktop.background picture-uri "http://wallpaperswide.com/download/nature_301-wallpaper-2880x1800.jpg"
 
 ##############################################
 ## install sublime text 3
