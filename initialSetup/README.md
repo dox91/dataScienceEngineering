@@ -1,4 +1,4 @@
-# InitialSetup
+# Initial Setup
 
 This folder contains scripts to do some initial installations and furthermore helps with quickly starting some applications
 
