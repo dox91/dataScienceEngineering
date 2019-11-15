@@ -8,7 +8,11 @@ GREEN='\033[0;32m'
 NC='\033[0m' # No Color
 
 APP="hdp"
+# docker-image
 URL="https://downloads-hortonworks.akamaized.net/sandbox-hdp-3.0.1/HDP_3.0.1_docker-deploy-scripts_18120587fc7fb.zip"
+# virtualbox
+#URL="https://archive.cloudera.com/hwx-sandbox/hdp/hdp-3.0.1/HDP_3.0.1_virtualbox_181205.ova"
+
 INSTFILE=${URL##*/}
 
 # in order to export JAVA_HOME

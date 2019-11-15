@@ -37,4 +37,4 @@ if [ ! -d "$HOME/$APP" ];
 fi
 
 cd $HOME/$APP/$APPDIR
-bin/spark-shell
+bin/spark-shell $*

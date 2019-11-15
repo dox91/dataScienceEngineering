@@ -39,6 +39,30 @@
 #gsettings set org.gnome.desktop.background picture-uri "http://wallpaperswide.com/download/nature_301-wallpaper-2880x1800.jpg"
 
 ##############################################
+## detect proper nvidia driver and install
+##############################################
+# https://askubuntu.com/questions/997245/ubuntu-auto-detect-nvidia-driver-version-for-install
+# https://www.linuxbabe.com/ubuntu/install-nvidia-driver-ubuntu-18-04
+ubuntu-drivers devices | grep nvidia-driver
+
+sudo add-apt-repository ppa:graphics-drivers/ppa                
+sudo apt update             
+
+sudo ubuntu-drivers autoinstall
+#sudo apt install nvidia-390
+
+prime-select query
+# sudo prime-select intel # sudo prime-select nvidia
+
+##############################################
+## gpu usage monitor
+##############################################
+#https://askubuntu.com/questions/387594/how-to-measure-gpu-usage
+#https://developer.nvidia.com/nvidia-system-management-interface
+
+# http://manpages.ubuntu.com/manpages/precise/en/man1/alt-nvidia-current-smi.1.html
+
+##############################################
 ## install sublime text 3
 ##############################################
 # https://linuxize.com/post/how-to-install-sublime-text-3-on-ubuntu-18-04/
@@ -221,7 +245,7 @@ snap install spotify
 ##############################################
 ## install keepass
 ##############################################
-sudo apt -y install keepassx
+sudo snap install keepassxc
 
 ##############################################
 ## install virtualbox
@@ -244,6 +268,54 @@ sudo snap install mailspring
 ## install libreoffice
 ##############################################
 sudo snap install libreoffice
+
+##############################################
+## install vlc media player
+##############################################
+sudo apt-get install vlc
+
+##############################################
+## gnome tweaks
+##############################################
+sudo apt install gnome-tweak-tool
+
+# add mojave dark theme
+mkdir ~/.themes
+cd ~/.themes
+wget https://www.gnome-look.org/p/1275087/startdownload?file_id=1556778727&file_name=Mojave-dark.tar.xz&file_type=application/x-xz&file_size=576768
+tar zxvf Mojave-dark.tar.xz
+rm Mojave-dark.tar.xz
+cd ~
+
+##############################################
+## journey (a markdown diary)
+##############################################
+sudo snap install journey
+
+##############################################
+## simplenote
+##############################################
+sudo snap install simplenote
+
+##############################################
+## anbox
+##############################################
+#https://linuxconfig.org/how-to-install-anbox-and-run-android-apps-in-linux
+sudo apt install anbox
+sudo apt install android-tools-adb
+
+#https://www.apkmirror.com/
+
+##############################################
+## smplayer
+##############################################
+#https://www.linuxbabe.com/desktop-linux/install-smplayer-on-ubuntu-opensuse-arch-linux-and-fedora
+sudo apt-get install smplayer
+
+##############################################
+## krita drawing app
+##############################################
+#sudo snap install krita
 
 ##############################################
 ## markdown editor
@@ -269,7 +341,6 @@ sudo snap install libreoffice
 ##############################################
 # else
 ##############################################
-## install vlc media player
 ## note app / note client for evernote
 
 ##############################################
@@ -280,3 +351,6 @@ sudo snap install libreoffice
 dpkg --list
 #sudo apt-get purge “package-name”
 #sudo apt-get autoremove
+
+# exfat
+sudo apt-get install exfat-fuse exfat-utils

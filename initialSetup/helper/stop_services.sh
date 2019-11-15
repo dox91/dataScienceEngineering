@@ -10,6 +10,7 @@ NC='\033[0m' # No Color
 APPS="nifi spark kafka zeppelin hbase hdp hdf confluent zeppelin"
 source /etc/environment
 
+
 ##############################################
 ### Script start
 ##############################################
@@ -72,3 +73,18 @@ for i in $APPS; do
         ;;
 	esac
 done
+
+echo $USER
+VB=$(sudo -u anh VBoxManage list runningvms | sed 's/^"\([^"]*\).*/\1/')
+echo $VB
+echo -e "${YELLOW}Stop VMs (virtualbox) ${NC}"
+if [ -z "$VB" ]
+  then echo -e "${YELLOW}No VMs running! Nothing to stop.${NC}"
+  exit
+else
+  for i in $VB; do
+    echo -e "${YELLOW}Stop $i running-vm in savestate mode ${NC}" 
+    vboxmanage controlvm $i savestate
+    echo -e "${GREEN}done ${NC}"
+  done
+fi
