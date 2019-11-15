@@ -27,8 +27,6 @@ tee -a $SCFILE <<< "Name=$NAME"
 tee -a $SCFILE <<< "Comment=$NAME"
 tee -a $SCFILE <<< "Icon=${HOME}/Pictures/${NAME}-icon.png "
 
-
-
 ##############################################
 ### II. Manually - using gnome-panel
 ##############################################
