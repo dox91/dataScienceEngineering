@@ -255,6 +255,11 @@ sudo add-apt-repository multiverse && sudo apt-get update
 sudo apt -y install virtualbox
 
 ##############################################
+## install vvmware
+##############################################
+#https://itsfoss.com/install-vmware-player-ubuntu-1310/
+
+##############################################
 ## install htop
 ##############################################
 sudo apt-get -y install htop 

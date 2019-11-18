@@ -7,12 +7,12 @@ YELLOW='\033[0;33m'
 GREEN='\033[0;32m'
 NC='\033[0m' # No Color
 
-APP="hdpVB"
+APP="hdfVB"
 # virtualbox
-URL="https://archive.cloudera.com/hwx-sandbox/hdp/hdp-3.0.1/HDP_3.0.1_virtualbox_181205.ova"
+URL="https://archive.cloudera.com/hwx-sandbox/hdf/hdf-3.1.1/HDF_3.1.1_virtualbox_180626.ova"
 
 OVA_FILE=${URL##*/}
-VM_NAME="hdp_3_0_1"
+VM_NAME="hdf_3_1_1"
 
 ##############################################
 ### Link
@@ -47,4 +47,4 @@ VBoxManage import $OVA_FILE --vsys 0 --vmname $VM_NAME --eula accept
 VBoxManage startvm $VM_NAME --type=gui
 
 echo -e "${YELLOW}INFO [1]: Welcome page: http://localhost:1080"
-echo -e "${YELLOW}INFO [2]: SSH: ssh root@sandbox-hdp.hortonworks.com -p 2222 and start password hadoop (you may have changed that after first login)"
+echo -e "${YELLOW}INFO [2]: SSH: ssh root@sandbox-hdf.hortonworks.com -p 2222 and start password hadoop (you may have changed that after first login)"
